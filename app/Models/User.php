@@ -19,8 +19,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'first_name',
         'email',
         'password',
+        'bio',
+        'role',
     ];
 
     /**
@@ -44,5 +47,63 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get the posts created by the user.
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    /**
+     * Get the comments created by the user.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Get the series created by the user.
+     */
+    public function series()
+    {
+        return $this->hasMany(Series::class);
+    }
+
+    /**
+     * Get the posts liked by the user.
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    /**
+     * Get the posts favorited by the user.
+     */
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    /**
+     * Get the users that this user is following.
+     */
+    public function following()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'following_id')
+            ->withTimestamps();
+    }
+
+    /**
+     * Get the users that are following this user.
+     */
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'following_id', 'follower_id')
+            ->withTimestamps();
     }
 }
