@@ -1,6 +1,6 @@
 # PROJET DE GROUPE ADMIN SYS
 
-Créer un projet Bash pour consommer l’API de Dev.to.
+Créer un projet Bash pour consommer l’API de [Dev.to](https://developers.forem.com/api/v1).
 Il doit être interactif en ligne de commande. C'est à dire que 
 Le programme de me permettre de donner la main pour entrer les 
 informations au besoin, pour faire la requête exemple, l'ID d'un article 
