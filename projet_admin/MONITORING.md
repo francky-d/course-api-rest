@@ -1,6 +1,7 @@
 # Projet : API de Monitoring Serveur (HealthCheck API)
 
 ---
+**Note**: [*/20 + bonus (1 à  3points en réserve)]
 
 ## Contexte et objectif
 
@@ -44,6 +45,7 @@ Créer une API REST simple qui expose les métriques de base du serveur **sans a
 ## Exemples de réponses JSON
 
 ### GET /health
+
 ```json
 {
   "status": "UP",
@@ -53,6 +55,7 @@ Créer une API REST simple qui expose les métriques de base du serveur **sans a
 ```
 
 ### GET /cpu
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -64,6 +67,7 @@ Créer une API REST simple qui expose les métriques de base du serveur **sans a
 ```
 
 ### GET /memory
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -77,6 +81,7 @@ Créer une API REST simple qui expose les métriques de base du serveur **sans a
 ```
 
 ### GET /disk
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -90,6 +95,7 @@ Créer une API REST simple qui expose les métriques de base du serveur **sans a
 ```
 
 ### GET /system
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -159,6 +165,7 @@ Pour le niveau 2, les seuils peuvent être codés en dur dans le code. Ils devie
 ## Exemples de réponses JSON
 
 ### GET /os
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -172,6 +179,7 @@ Pour le niveau 2, les seuils peuvent être codés en dur dans le code. Ils devie
 ```
 
 ### GET /load
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -184,6 +192,7 @@ Pour le niveau 2, les seuils peuvent être codés en dur dans le code. Ils devie
 ```
 
 ### GET /network
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -203,6 +212,7 @@ Pour le niveau 2, les seuils peuvent être codés en dur dans le code. Ils devie
 ```
 
 ### GET /processes/top
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -216,6 +226,7 @@ Pour le niveau 2, les seuils peuvent être codés en dur dans le code. Ils devie
 ```
 
 ### GET /services
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -228,6 +239,7 @@ Pour le niveau 2, les seuils peuvent être codés en dur dans le code. Ils devie
 ```
 
 ### GET /alerts
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -301,6 +313,7 @@ TABLE: thresholds
 ### GET /config/thresholds
 
 **Réponse :**
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -324,11 +337,13 @@ TABLE: thresholds
 ### PUT /config/thresholds
 
 **Requête :**
+
 ```
 PUT /config/thresholds
 Headers:
   Authorization: Bearer <token_admin>
 ```
+
 ```json
 {
   "cpu": {
@@ -347,6 +362,7 @@ Headers:
 ```
 
 **Réponse :**
+
 ```json
 {
   "message": "Seuils mis à jour avec succès",
@@ -419,6 +435,7 @@ TABLE: users
 ### POST /login
 
 **Requête :**
+
 ```json
 {
   "username": "admin",
@@ -427,6 +444,7 @@ TABLE: users
 ```
 
 **Réponse (succès) :**
+
 ```json
 {
   "message": "Connexion réussie",
@@ -443,6 +461,7 @@ TABLE: users
 ```
 
 **Réponse (erreur) :**
+
 ```json
 {
   "error": "Connexion échouée",
@@ -453,11 +472,13 @@ TABLE: users
 ### POST /users (Admin crée un utilisateur)
 
 **Requête :**
+
 ```
 POST /users
 Headers:
   Authorization: Bearer <token_admin>
 ```
+
 ```json
 {
   "username": "jean.dupont",
@@ -467,6 +488,7 @@ Headers:
 ```
 
 **Réponse :**
+
 ```json
 {
   "message": "Utilisateur créé avec succès",
@@ -483,6 +505,7 @@ Headers:
 ### GET /users (Liste des utilisateurs)
 
 **Requête :**
+
 ```
 GET /users
 Headers:
@@ -490,6 +513,7 @@ Headers:
 ```
 
 **Réponse :**
+
 ```json
 {
   "checked_at": "2025-01-08T15:30:00Z",
@@ -516,6 +540,7 @@ Headers:
 ### POST /change-password
 
 **Requête :**
+
 ```json
 {
   "current_password": "admin123",
@@ -525,6 +550,7 @@ Headers:
 ```
 
 **Réponse :**
+
 ```json
 {
   "message": "Mot de passe modifié avec succès"
@@ -599,6 +625,7 @@ Créer un système de surveillance automatique qui envoie des alertes sur Discor
 3. Créer un webhook et copier l'URL
 
 L'URL ressemble à :
+
 ```
 https://discord.com/api/webhooks/1234567890/abcdefghijklmnop
 ```
@@ -608,6 +635,7 @@ https://discord.com/api/webhooks/1234567890/abcdefghijklmnop
 ### POST /config/discord
 
 **Requête :**
+
 ```json
 {
   "webhook_url": "https://discord.com/api/webhooks/1234567890/abcdefghijklmnop",
@@ -617,6 +645,7 @@ https://discord.com/api/webhooks/1234567890/abcdefghijklmnop
 ```
 
 **Réponse :**
+
 ```json
 {
   "message": "Configuration Discord sauvegardée",
@@ -723,13 +752,16 @@ crontab -e
 | Node.js | `systeminformation` |
 
 ## Documentation API
-- Postman : https://www.postman.com/
-- Codes HTTP : https://developer.mozilla.org/fr/docs/Web/HTTP/Status
+
+- Postman : <https://www.postman.com/>
+- Codes HTTP : <https://developer.mozilla.org/fr/docs/Web/HTTP/Status>
 
 ## Discord Webhooks
-- Documentation : https://discord.com/developers/docs/resources/webhook
+
+- Documentation : <https://discord.com/developers/docs/resources/webhook>
 
 ## Commandes Linux utiles
+
 - `top`, `htop` : Utilisation CPU/RAM
 - `free -m` : Mémoire disponible
 - `df -h` : Espace disque
