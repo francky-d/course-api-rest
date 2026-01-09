@@ -25,6 +25,11 @@ Rappel : **Je dois avoir la main dans le terminal pour entrer  les paramètres n
 
 - `get_tags`  
     Récupère la liste des tags.
-    
+
 - `get_comments`  
-    Récupères les commentaires d'un article (prend en paramètre l’ID de l’article)
+    Récupère les commentaires d'un article. 
+
+- `my_published_articles`
+   récupère uniquement mes articles que j'ai créé et qui sont publiés
+
+-  `my_unpublised_articles`
