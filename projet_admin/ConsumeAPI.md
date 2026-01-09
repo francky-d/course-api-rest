@@ -1,4 +1,4 @@
-# PROJET DE GROUPE ADMIN SYS
+# PROJET DE GROUPE ADMIN SYS (*/20)
 
 Créer un projet Bash pour consommer l’API de [Dev.to](https://developers.forem.com/api/v1).
 Il doit être interactif en ligne de commande. C'est à dire que
