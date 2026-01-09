@@ -1,5 +1,5 @@
 
-# 🖥️ Projet : API de Monitoring Serveur (HealthCheck API)
+#  Projet : API de Monitoring Serveur (HealthCheck API)
 
 ## Contexte et objectif
 
